@@ -23,4 +23,28 @@ var State = function(prevstate) {
         this.turn = prevstate.turn;
         this.gameresult = prevstate.gameresult;
     }
+
+    /**
+     * Function to change the turn
+     */
+    this.changeturn = function() {
+        //https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons
+        //https://stackoverflow.com/questions/6259982/how-do-you-use-the-conditional-operator-in-javascript
+        this.turn = this.turn === "X" ? "O" : "X";
+    }
+
+    /**
+     * Function that returns an array of the empty boxes
+     * @return emptyboxes (Array): zero-indexed array of empty boxes
+     */
+    this.getemptyboxes = function() {
+        var emptyboxes = [];
+        for(var i = 0; i < 9; i++) {
+            if(this.board[i] === " ") {
+                emptyboxes.push(i);
+            }
+        }
+        return emptyboxes;
+    }
+
 }
