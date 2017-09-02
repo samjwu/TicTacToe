@@ -3,10 +3,11 @@
 
 /**
  * Function for setting/changing state of game
- * @param prevstate: the previous state of the game
- * @attribute turn: the player to move
- * @attribute gameresult: a winner, draw, or in progress
- * @attribute board: 3x3 game board
+ * The State object/variable manages the turns and game result
+ * @param prevstate (State): the previous state of the game
+ * @attribute turn (string): the player to move
+ * @attribute gameresult (string): a winner, draw, or in progress
+ * @attribute board (array): 3x3 game board
  * @method changeturn: change turn
  * @method getemptyboxes: return Array of empty boxes
  * @method checkresult: return Boolean depending on gameresult
@@ -102,3 +103,17 @@ var State = function(prevstate) {
 }
 
 
+/**
+ * Function to run game using the State object/variable
+ * @attribute currstate (State): the current state of the instance of Rungame object
+ * @attribute running (string): yes/no to indicate whether game is running or not
+ */
+var Rungame = function() {
+
+    this.currstate = new State();
+    this.currstate.board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
+    this.currstate.turn = "X";
+    
+    this.running = "yes";
+
+}
