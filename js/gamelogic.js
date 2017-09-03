@@ -40,7 +40,7 @@ var State = function(prevstate) {
 
     /**
      * Function that returns an array of the empty boxes
-     * @return emptyboxes (Array): zero-indexed array of empty boxes
+     * @return emptyboxes (array): zero-indexed array of empty boxes
      */
     this.getemptyboxes = function() {
         var emptyboxes = [];
@@ -54,7 +54,7 @@ var State = function(prevstate) {
 
     /**
      * Function to check the game result
-     * @return Boolean: true if win or draw, false if in progress
+     * @return true/false (boolean): true if win or draw, false if in progress
      */
     this.checkresult = function() {
         var boardarray = this.board;
@@ -115,5 +115,35 @@ var Rungame = function() {
     this.currstate.turn = "X";
     
     this.running = "yes";
+
+    /**
+     * Function to change game state
+     * @param state (State obj): the state to change to
+     */
+    this.nextstate = function() {
+        this.currstate = state;
+        //stop running game if there is a winner or draw
+        if(state.checkresult()) {
+            this.running = "no";
+            if(state.gameresult === "X wins") {
+                //TODO: x wins screen
+            }
+            else if(state.gameresult === "O wins") {
+                //TODO: o wins screen
+            }
+            else {
+                //TODO: draw screen
+            }
+        }
+        //game is in progress
+        else {
+            if(this.currstate.turn === "X") {
+                //TODO
+            }
+            else{
+                //TODO
+            }
+        }
+    }
 
 }
