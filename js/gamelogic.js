@@ -107,6 +107,7 @@ var State = function(prevstate) {
  * Function to run game using the State object/variable
  * @attribute currstate (State): the current state of the instance of Rungame object
  * @attribute running (string): yes/no to indicate whether game is running or not
+ * @method nextstate: change the game state (win, draw, in prog)
  */
 var Rungame = function() {
 
@@ -114,7 +115,7 @@ var Rungame = function() {
     this.currstate.board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
     this.currstate.turn = "X";
     
-    this.running = "yes";
+    this.running = "not yet";
 
     /**
      * Function to change game state
@@ -140,9 +141,20 @@ var Rungame = function() {
             if(this.currstate.turn === "X") {
                 //TODO
             }
-            else{
+            else {
                 //TODO
             }
+        }
+    }
+
+    /**
+     * Function to start the game
+     */
+    this.startgame = function() {
+        //if game is starting, begin moving to the current/initial game state
+        if(this.running === "not yet") {
+            this.nextstate(this.currstate)
+            this.running = "yes";
         }
     }
 
