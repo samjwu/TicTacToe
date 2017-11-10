@@ -13,6 +13,7 @@
  * @method checkresult: return Boolean depending on gameresult
  */
 var State = function(prevstate) {
+    //https://www.phpied.com/3-ways-to-define-a-javascript-class/
     
     this.turn = "";
     this.gameresult = "in progress";
@@ -72,13 +73,6 @@ var State = function(prevstate) {
                 return true;
             }
         }
-        //diag check
-        for(var i = 0, j = 4; i <= 2 ; i = i + 2, j = j - 2) {
-            if(boardarray[i] !== " " && boardarray[i] === boardarray[i+j] && boardarray[i+j] === boardarray[i+2*j]) {
-                this.gameresult = boardarray[i] + " wins";
-                return true;
-            }
-        }
         // //desc diag check
         // if(boardarray[0] !== " " && boardarray[0] === boardarray[4] && boardarray[0] === boardarray[8]) {
         //     this.gameresult = boardarray[0] + " wins"
@@ -89,6 +83,13 @@ var State = function(prevstate) {
         //     this.gameresult = boardarray[2] + " wins"
         //     return true;
         // }
+        //diag check
+        for(var i = 0, j = 4; i <= 2 ; i = i + 2, j = j - 2) {
+            if(boardarray[i] !== " " && boardarray[i] === boardarray[i+j] && boardarray[i] === boardarray[i+2*j]) {
+                this.gameresult = boardarray[i] + " wins";
+                return true;
+            }
+        }
         //check for empty boxes
         var emptyboxes = this.getemptyboxes();
         if(emptyboxes.length == 0) {
@@ -105,9 +106,11 @@ var State = function(prevstate) {
 
 /**
  * Function to run game using the State object/variable
+ * Rungame object manages State and gameplay
  * @attribute currstate (State): the current state of the instance of Rungame object
  * @attribute running (string): yes/no to indicate whether game is running or not
  * @method nextstate: change the game state (win, draw, in prog)
+ * @method startgame: start the game
  */
 var Rungame = function() {
 
