@@ -13,11 +13,18 @@ $(".start").click(function() {
     //http://kangax.github.io/nfe/
     //https://api.jquery.com/click/
     controls.Rungame = new Rungame();
+    controls.Rungame.start();
 });
 
 /**
- * Function to place markers/pieces on board
+ * Function to allow player to click to place markers/pieces on board
  */
 $(".box").each(function() {
     //http://api.jquery.com/jquery.each/
+    var thisbox = $(this);
+    //https://www.w3schools.com/jquery/jquery_selectors.asp
+    //https://stackoverflow.com/questions/8667736/what-does-the-sign-mean-in-jquery-or-javascript
+    thisbox.click(function() {
+
+    })
 });
