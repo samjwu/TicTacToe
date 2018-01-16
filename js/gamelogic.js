@@ -109,7 +109,7 @@ var State = function(prevstate) {
  * Rungame object manages State and gameplay
  * @attribute currstate (State): the current state of the instance of Rungame object
  * @attribute running (string): yes/no to indicate whether game is running or not
- * @method nextstate: change the game state (win, draw, in prog)
+ * @method changestate: change the game state (win, draw, in prog)
  * @method startgame: start the game
  */
 var Rungame = function() {
@@ -121,18 +121,18 @@ var Rungame = function() {
     this.running = "not yet";
 
     /**
-     * Function to change game state
-     * @param state (State obj): the state to change to
+     * Function to change game to new state
+     * @param newstate (State obj): the state to change to
      */
-    this.nextstate = function() {
-        this.currstate = state;
+    this.changestate = function(newstate) {
+        this.currstate = newstate;
         //stop running game if there is a winner or draw
-        if(state.checkresult()) {
+        if(newstate.checkresult()) {
             this.running = "no";
-            if(state.gameresult === "X wins") {
+            if(newstate.gameresult === "X wins") {
                 //TODO: x wins screen
             }
-            else if(state.gameresult === "O wins") {
+            else if(newstate.gameresult === "O wins") {
                 //TODO: o wins screen
             }
             else {
@@ -142,10 +142,10 @@ var Rungame = function() {
         //game is in progress
         else {
             if(this.currstate.turn === "X") {
-                //TODO
+                //TODO player x turn
             }
             else {
-                //TODO
+                //TODO player o turn
             }
         }
     }
@@ -156,7 +156,7 @@ var Rungame = function() {
     this.startgame = function() {
         //if game is starting, begin moving to the current/initial game state
         if(this.running === "not yet") {
-            this.nextstate(this.currstate)
+            this.changestate(this.currstate)
             this.running = "yes";
         }
     }
