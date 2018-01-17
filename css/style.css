@@ -1,3 +1,6 @@
+/*https://www.w3schools.com/cssref/css_selectors.asp*/
+
+
 body {
     background:#000;
     font-family: "Garamond", "Times New Roman", Serif;
@@ -11,3 +14,21 @@ h1 {
     text-align: center;
     margin-bottom: 5px;
 }
+
+.header {
+
+}
+
+.board {
+
+}
+
+.box {
+    
+}
+
+.controller {
+
+}
+
+

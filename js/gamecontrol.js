@@ -1,5 +1,6 @@
 //Script for game controls
 
+
 /**
  * Object for game control functions
  */
@@ -25,7 +26,9 @@ $(".box").each(function() {
     //https://www.w3schools.com/jquery/jquery_selectors.asp
     //https://stackoverflow.com/questions/8667736/what-does-the-sign-mean-in-jquery-or-javascript
     thisbox.click(function() {
-        if(controls.rungame.running == "yes" && controls.rungame.currstate.turn == === "X" && !$this.hasClass('occupied')) {
+        //https://api.jquery.com/hasclass/
+        if(controls.rungame.running == "yes" && controls.rungame.currstate.turn === "X" && !$this.hasClass("full")) {
+            //https://api.jquery.com/jquery.data/
             var index = parseInt($this.data("index"));
             var nextstate = new State(controls.rungame.currstate);
             nextstate.board[index] = "X";

@@ -103,7 +103,6 @@ var State = function(prevstate) {
 
 }
 
-
 /**
  * Function to run game using the State object/variable
  * Rungame object manages State and gameplay
