@@ -17,7 +17,15 @@ ui.placepiece = function(index, piece) {
     var board = $(".box");
     var place = $(board[index]);
 
+    //https://api.jquery.com/hasclass/
     if(!place.hasClass("full")) {
-        //TODO: place piece
+        //https://www.w3schools.com/jquery/html_html.asp
+        place.html(piece);
+        //https://www.w3schools.com/jquery/css_css.asp
+        place.css({
+            color : piece == "X"? "blue" : "red"
+        });
+        //https://www.w3schools.com/jquery/html_addclass.asp
+        place.addClass("full");
     }
 }
