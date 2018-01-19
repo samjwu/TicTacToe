@@ -2,7 +2,7 @@
 
 
 body {
-    background:#000;
+    background: #000;
     font-family: "Garamond", "Times New Roman", Serif;
     color: #000;
     text-align: center;
@@ -16,19 +16,26 @@ h1 {
 }
 
 .header {
+    width: 100%;
+}
 
+.wrapper {
+    height: 1000px;
+    width: 100%;
 }
 
 .board {
-
+    height: 510px;
+    width: 510px;
 }
 
 .box {
-    
+    height: 170px;
+    width: 170px;
 }
 
 .controller {
-
+    /*TODO: text characteristics*/
 }
 
 
