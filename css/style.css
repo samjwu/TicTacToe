@@ -16,30 +16,34 @@ h1 {
 
 .header {
     width: 100%;
+    font-size: 50px;
 }
 
 .wrapper {
     height: 1000px;
     width: 100%;
-    margin: 0px;
 }
 
 .board {
     height: 510px;
     width: 510px;
-    margin: 0px;
 }
 
 /*TODO: fix boxes*/
 .box {
     height: 170px;
     width: 170px;
-
-    border-width: 10px;
-    border-color: #f00;
-    text-align: center;
-
+    border: 10px solid #fff;
     cursor: pointer;
+    float: right;
+    /*
+    https://www.w3schools.com/cssref/css3_pr_box-sizing.asp
+    https://css-tricks.com/box-sizing/
+    */
+    box-sizing: content-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
 }
 
 .controller {
