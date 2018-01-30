@@ -27,9 +27,9 @@ h1 {
 .board {
     height: 510px;
     width: 510px;
+    margin: auto;
 }
 
-/*TODO: fix boxes*/
 .box {
     height: 170px;
     width: 170px;
@@ -40,10 +40,11 @@ h1 {
     https://www.w3schools.com/cssref/css3_pr_box-sizing.asp
     https://css-tricks.com/box-sizing/
     */
-    box-sizing: content-box;
+    box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-
+    /*https://www.sitepoint.com/community/t/overlapping-borders-for-side-by-side-divs/1681/5*/
+    margin: -5px;
 }
 
 .controller {
