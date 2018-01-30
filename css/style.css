@@ -4,7 +4,6 @@
 body {
     background: #000;
     font-family: "Garamond", "Times New Roman", Serif;
-    color: #000;
     text-align: center;
 }
 
@@ -22,16 +21,25 @@ h1 {
 .wrapper {
     height: 1000px;
     width: 100%;
+    margin: 0px;
 }
 
 .board {
     height: 510px;
     width: 510px;
+    margin: 0px;
 }
 
+/*TODO: fix boxes*/
 .box {
     height: 170px;
     width: 170px;
+
+    border-width: 10px;
+    border-color: #f00;
+    text-align: center;
+
+    cursor: pointer;
 }
 
 .controller {
