@@ -2,7 +2,7 @@
 
 
 body {
-    background: #000;
+    background: #555;
     font-family: "Garamond", "Times New Roman", Serif;
     text-align: center;
 }
@@ -14,14 +14,34 @@ h1 {
     margin-bottom: 5px;
 }
 
-.header {
-    width: 100%;
-    font-size: 50px;
-}
-
 .wrapper {
     height: 1000px;
     width: 100%;
+}
+
+.header {
+    width: 100%;
+    font-size: 55px;
+}
+
+.controller {
+    /*TODO: text characteristics*/
+}
+
+.start {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    line-height: 100px;
+    text-align: center;
+    border-radius: 50px;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    cursor:pointer;
 }
 
 .board {
@@ -35,7 +55,7 @@ h1 {
     width: 170px;
     border: 10px solid #fff;
     cursor: pointer;
-    float: right;
+    float: left;
     /*
     https://www.w3schools.com/cssref/css3_pr_box-sizing.asp
     https://css-tricks.com/box-sizing/
@@ -46,9 +66,3 @@ h1 {
     /*https://www.sitepoint.com/community/t/overlapping-borders-for-side-by-side-divs/1681/5*/
     margin: -5px;
 }
-
-.controller {
-    /*TODO: text characteristics*/
-}
-
-
