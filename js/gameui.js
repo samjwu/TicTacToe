@@ -29,3 +29,11 @@ ui.placepiece = function(index, piece) {
         place.addClass("full");
     }
 }
+
+/**
+ * Function to update the board
+ * @param turn (String): which player's turn it is
+ */
+ui.updateboard = function(turn) {
+    
+}

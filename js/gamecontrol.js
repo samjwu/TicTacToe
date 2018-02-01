@@ -9,12 +9,12 @@ var controls = {};
 /**
  * Function to start game on click
  */
-$(".start").click(function() {
+$(".startgame").click(function() {
     //https://stackoverflow.com/questions/2539205/javascript-inline-function-vs-predefined-functions
     //http://kangax.github.io/nfe/
     //https://api.jquery.com/click/
     controls.rungame = new Rungame();
-    controls.rungame.start();
+    controls.rungame.startgame();
 });
 
 /**
@@ -32,7 +32,7 @@ $(".box").each(function() {
             var index = parseInt($this.data("index"));
             var nextstate = new State(controls.rungame.currstate);
             nextstate.board[index] = "X";
-            //TODO: put x on screen
+            ui.placepiece(index, "X");
             nextstate.changeturn();
             controls.rungame.changestate(nextstate);
         }
